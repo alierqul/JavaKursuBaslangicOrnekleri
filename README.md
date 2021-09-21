@@ -18,6 +18,74 @@
 
 **Heap:** Heap’ te stack bölgesi gibi RAM ’deki hafıza alanıdır. Nesnelerin hepsi Heap’ te bulunur ve veriler çalışma zamanında dinamik olarak yaratılırlar yani derleme aşamasında yer tahsis işlemi yapılmaz. Referans tipli değişkenlerin saklandıkları ve değişkene adres bilgisinin gönderildiği yerlerdir.
 
+# JAVA Diline Giriş
+
+**JAVA**,çeşitli uygulamalar geliştirmek için kullanılan popüler bir programlama dilidir. JAVA'nın avantajı nesne yönelimli programlamayı desteklemesidir.  Programlama yapabilmek için veri depolamak gereklidir ve veri depolamak için ayrılmış bellek konumlarına **değişken** adı verilir.  Her değişkenin belirli bir türü vardır. JAVA dili tarafından sağlanan 8 ilkel tür vardır. Bunlar ,**Primitive Type** , olarak sınıflandırılır : 
+
+ - byte
+ - short
+ - int
+ - long
+ - float
+ - double
+ - char
+ - boolean
+
+Bazen primitive türleri bir nesneye ve nesneyi de ilkel türe dönüştürmek gerekir.  
+
+**WrapperClass Nedir** : JAVA'da Wrapper sınıfı, ilkel bir veri türünü nesneye ve nesneyi de ilkel bir türe dönüştürmek için kullanılan sınıfdır.
+
+*Integer intSayi = new Integer(10);*
+// intSayi bir Integer tipinde bir Wrapper Class nesnesidir.
+
+*int i = intSayi . intValue();*
+// i değişkeni ise Primitive türünde ilkel bir int (integer) değişkenidir.
+
+intValue() metodu kullanılarak nesneden ilkel türe bir **unBoxing** işlemi uygulanmıştır. Yani; Bir Wrapper sınıfının nesnesini , karşılık gelen primitive türünde otomatik olarak dönüştürme işlemine **kutudan çıkarma (unBoxing)** işlemi olarak bilinir.ArrayLists gibi koleksiyonlar nesneleri depoladıkları için Wrapper sınıfını kullanırlar.
+
+## Primitive ve Wrappend Class verileri karşılaştırırsak : ##
+
+ |Primitive Tür                          |Wrapper Class|
+|-------------------------------|-----------------------------|
+|İlkel tür, JAVA tarafından sağlanan önceden tanımlanmış bir veri türüdür.       |Wrapper sınıfı, ilkel türü nesneye ve nesneyi ilkel türe dönüştürmek için mekanizma sağlar.             | 
+|İlkel tür bir nesne değildir, dolayısıyla bir sınıfa ait değildir.            |Bir nesne oluşturmak için bir Wrapper sınıfı kullanır bu nedenle karşılık gelen bir sınıfa sahiptir. |
+|İlkel bir veri türü null değerlere izin vermez|Wrapper Sınıf nesneleri null değerlere izin verir.|
+|Gerekli bellek Wrapper sınıflara kıyasla daha düşüktür.| Gerekli bellek,ilkeltürlerden daha yüksektir. kümelenmiş dizin ek bir alan gerektirmez.|
+|Koleksiyonlarda ilkel bir tür kullanılmaz.|Wrapper sınıflar ArrayList vb. gibi koleksiyonlarla kullanılabilir.|
+
+
+[Ayrıca Bakınız:](https://www.differencebetween.com/difference-between-wrapper-class-and-vs-primitive-type-in-java/)
+
+
+## Integer.valueOf() ve Integer.parseInt() Kavramları:
+
+**Integer.ParseInt():** Diziler üzerinde çalışırken dize olarak gösterilen bir sayıyı tamsayı türüne dönüştürmemiz gereken zamanlar vardır. JAVA'da String' i Integer' e dönüştürmek için genellikle kullanılan yöntem parseInt'dir. Bu yöntem java.lang package. içinde Integer Sınıfında yer alır. Parametre olarak geçerli bir dize alır ve onu ilkel veri türüne ayrıştırır. Yalnızca String' i parametre olarak kabul eder ve diğer herhangi bir veri türünün değerlerini geçerken uyumsuz türler nedeniyle bir hata üretir. Bu yöntemin iki çeşidi vardır. 
+
+*public static int parseInt(String s) throws NumberFormatException*
+
+*public static int parseInt(String s, int radix) throws NumberFormatException*
+radix = Sayı Tabanı demek. Girilen sayının Hangi tabanda olduğunu göstermemizi istiyor.
+*int`  `radixExample = Integer.parseInt(``"20"``,` `16``);*
+
+ - 16 lık tabanda 20 sayısı 10 luk tabanda 32 ye eşittir. değişkenimizin
+   değeri 32 olur.
+
+**Integer.valueOf():**
+Bu Yöntem, geçirilen argümanın degerini tutan ilgili Integer nesnesini döndüren  java.lang package. 'e ait statik bir yöntemdir. Bu yöntem, parametre olarak bir tamsayı veya bir String alabilir. Ancak verilen String geçersiz olduğunda hata verir. Bu yöntem aynı zamanda parametre olarak bir karakter alabilir ancak çıktı olarak ona karşılık gelen Unicode değeri olacaktır. Bu yöntem her zaman -128 ila 127 aralığındaki değerleri önbelleğe alır ve bu aralığın dışındaki diğer değerleri önbelleğe alabilir.
+
+*public static Integer valueOf(int a)
+public static Integer valueOf(String str)
+public static Integer valueOf(String str, int base)*
+
+| Integer.parseInt() | Integer.valueOf()  |
+|--|--|
+| Parametre olarak sadece String alabilir. |Parametre olarak bir String ve bir tamsayı alabilir.  |
+|ilkel bir int değeri döndürür.| Bir Integer nesnesi döndürür.|
+|Parametre olarak bir tamsayı iletildiğinde uyumsuz türler nedeniyle hata üretir.|Bir tamsayı parametre olarak iletildiğinde verilen parametreye karşılık gelen Integer Nesnesi döndürür.|
+|Bu yöntem parametre olarak bir karakter iletildiğinde hata üretir.|Parametre olarak bir karakter alabilir ve karşılık gelen Unicode değeri gönderir.|
+|Bir dizeyi ayrıştırmak, bir dize oluşturmaya kıyasla çok zaman aldığından performans açısından geride kalıyor.|Sıklıkla istenen değerleri önbelleğe alarak önemli ölçüde daha iyi alan ve zaman performansı sağlaması muhtemeldir.|
+|İlkel int veri türüne ihtiyacımız varsa kullanılmalıdır.|Wrapper Integer nesnesi gerekiyorsa kullanılmalıdır.|
+[Ayrıca Bakınız...](https://www.geeksforgeeks.org/integer-valueof-vs-integer-parseint-with-examples/)
 
 # # JDK 17'nin yeni özellikleri şunları içerir:
 
