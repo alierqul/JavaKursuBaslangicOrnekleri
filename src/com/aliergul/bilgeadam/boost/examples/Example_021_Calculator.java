@@ -34,7 +34,7 @@ import java.util.Scanner;
  *         0 tuşuna basarsa (çıkış yapsın)
  * 		
  */
-public class Example_020_EmailPaswordConsole {
+public class Example_021_Calculator {
 	private static final String DB_EMAIL = "root@mail.com";
 	private static final String DB_PASS = "root";
 	private static final String TITLE_GIRIS = "-Login Ekranı-";
@@ -138,6 +138,8 @@ public class Example_020_EmailPaswordConsole {
 				}
 				
 			}
+			// Döngü sonu
+			
 		}
 		
 	}
@@ -262,7 +264,7 @@ public class Example_020_EmailPaswordConsole {
 		makeLine(TITLE_MENU);
 		int sum = 0;
 		System.out.print("\n\t\t= Metin Gir              : ");
-		String msg = in.nextLine().trim();
+		String msg = in.nextLine().trim().toLowerCase();
 		String newStr = "";
 		char[] charArray = msg.toCharArray();
 		
@@ -282,6 +284,10 @@ public class Example_020_EmailPaswordConsole {
 				}
 				case 'ö': {
 					newStr += 'o';
+					break;
+				}
+				case 'ü': {
+					newStr += 'u';
 					break;
 				}
 				default:
