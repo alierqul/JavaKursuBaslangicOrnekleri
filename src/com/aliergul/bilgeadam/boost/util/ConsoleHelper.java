@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.aliergul.bilgeadam.boost.examples;
+package com.aliergul.bilgeadam.boost.util;
 
 import java.util.Scanner;
 

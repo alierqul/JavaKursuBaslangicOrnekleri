@@ -5,6 +5,8 @@ package com.aliergul.bilgeadam.boost.examples;
 
 import java.util.Scanner;
 
+import com.aliergul.bilgeadam.boost.util.ConsoleHelper;
+
 /**
  * @author ERGUL
  *
