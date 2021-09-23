@@ -17,6 +17,7 @@
  **Stack:** Uygulama derlenirken değişkenler değerleri RAM 'e yüklenir. Değer tipleri int, short, byte, long, decimal, double, float dir. Heap e göre daha hızlıdır.
 
 **Heap:** Heap’ te stack bölgesi gibi RAM ’deki hafıza alanıdır. Nesnelerin hepsi Heap’ te bulunur ve veriler çalışma zamanında dinamik olarak yaratılırlar yani derleme aşamasında yer tahsis işlemi yapılmaz. Referans tipli değişkenlerin saklandıkları ve değişkene adres bilgisinin gönderildiği yerlerdir.
+---
 
 # JAVA Diline Giriş
 
@@ -56,7 +57,7 @@ intValue() metodu kullanılarak nesneden ilkel türe bir **unBoxing** işlemi uy
 
 [Ayrıca Bakınız:](https://www.differencebetween.com/difference-between-wrapper-class-and-vs-primitive-type-in-java/)
 
-
+---
 ## Integer.valueOf() ve Integer.parseInt() Kavramları:
 
 **Integer.ParseInt():** Diziler üzerinde çalışırken dize olarak gösterilen bir sayıyı tamsayı türüne dönüştürmemiz gereken zamanlar vardır. JAVA'da String' i Integer' e dönüştürmek için genellikle kullanılan yöntem parseInt'dir. Bu yöntem java.lang package. içinde Integer Sınıfında yer alır. Parametre olarak geçerli bir dize alır ve onu ilkel veri türüne ayrıştırır. Yalnızca String' i parametre olarak kabul eder ve diğer herhangi bir veri türünün değerlerini geçerken uyumsuz türler nedeniyle bir hata üretir. Bu yöntemin iki çeşidi vardır. 
@@ -86,6 +87,29 @@ public static Integer valueOf(String str, int base)*
 |Bir dizeyi ayrıştırmak, bir dize oluşturmaya kıyasla çok zaman aldığından performans açısından geride kalıyor.|Sıklıkla istenen değerleri önbelleğe alarak önemli ölçüde daha iyi alan ve zaman performansı sağlaması muhtemeldir.|
 |İlkel int veri türüne ihtiyacımız varsa kullanılmalıdır.|Wrapper Integer nesnesi gerekiyorsa kullanılmalıdır.|
 [Ayrıca Bakınız...](https://www.geeksforgeeks.org/integer-valueof-vs-integer-parseint-with-examples/)
+
+---
+
+# # StringBuffer ve StringBuilder arasındaki fark 
+
+**JDK (Java Development Kit)** Java uygulamaları geliştirme ortamıdır. İşin Mutfağıdır. JVM, JRE, Java kütüphaneleri, Java Compiler ve Interpreter içerir. 
+Java, bir karakter dizisini temsil etmek için üç sınıf sağlar: String, StringBuffer ve StringBuilder. String sınıfı değişmez bir sınıfken, StringBuffer ve StringBuilder sınıfları değişkendir. StringBuffer ve StringBuilder arasında birçok fark vardır. StringBuilder sınıfı, JDK 1.5'ten beri tanıtılmaktadır.
+
+StringBuffer ve StringBuilder arasındaki farkların bir listesi aşağıda verilmiştir:
+
+
+|StringBuffer | StringBuilder |
+|--|--|
+|  StringBuffer _senkronizedir,_ yani iş parçacığı güvenlidir. Bu, iki iş parçacığının aynı anda StringBuffer yöntemlerini çağıramayacağı anlamına gelir.  | StringBuilder _senkronize_ değil, yani iş parçacığı için güvenli değil. Bu, iki iş parçacığının aynı anda StringBuilder yöntemlerini çağırabileceği anlamına gelir.  |
+|StringBuffer, StringBuilder'dan daha _az verimlidir_ .|StringBuilder, StringBuffer'dan _daha verimlidir_ . |
+| StringBuffer, Java 1.0'da tanıtıldı | StringBuilder Java 1.5'te tanıtıldı |
+---
+**Synchronized Nedir:** Senkronize şu anlama gelir: Sırayla, Eşzamanlı değil [Aynı anda değil]. Synchronized yöntemi, bir iş parçacığı zaten üzerinde çalışırken, üzerinde başka bir iş parçacığının çalışmasına izin vermez. Bu, eşzamanlılığı önler. senkronizasyon örneği: Bir sinema bileti almak ve kuyrukta beklemek istiyorsanız. bileti ancak önünüzdeki kişi bileti aldıktan sonra alacaksınız demek oluyor.
+**Thread safe means:** Bu yöntem, aynı anda birden fazla iş parçacığı tarafından sorunsuz bir şekilde erişilmek üzere güvenli hale gelir. synchronized anahtar sözcüğü, 'thread safe' elde etmenin yollarından biridir. Ancak Unutmayın: Aslında, birden fazla iş parçacığı senkronize yönteme erişmeye çalışırken, sırayı takip ederler, böylece erişim güvenli hale gelir. Aslında, aynı anda hareket ederler, ancak kaynağın senkronize davranışı nedeniyle aynı kaynağa (yöntem/bloğa) aynı anda erişemezler.
+
+
+
+
 
 # # JDK 17'nin yeni özellikleri şunları içerir:
 

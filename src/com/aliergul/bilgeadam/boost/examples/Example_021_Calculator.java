@@ -5,6 +5,8 @@ package com.aliergul.bilgeadam.boost.examples;
 
 import java.util.Scanner;
 
+import com.aliergul.bilgeadam.boost.util.ConsoleHelper;
+
 /**
  * @author ERGUL
  *         Klavyeden girilecek email ve şifre kntrol edilecek.
@@ -31,6 +33,18 @@ import java.util.Scanner;
  *         8 kullanıcıdan girmiş olduğu ş harfi varsa hepsini s çevirsin
  *         almış olduğumuz kelimeyi ters çevirecek
  * 		
+ *         9 // kullanıcı tarafından kelimeyi tersten yazıdan algoritma
+ *         // Bilge
+ *         // egliB
+ *         // elB
+ *         // içerisindeki 'e' sessli harften kaç tane var
+ *         // içesindeki 'e' sessli harfini çıkarsın
+ *         // lB
+ *         //
+ *         //sonuçtan çıkan harfleri alsın farklı metoda verecek ve farklı
+ *         metotta
+ *         //0<=x<=10 5 bölünebilen sayıları çıkarsın
+ *         //lB12346789
  *         0 tuşuna basarsa (çıkış yapsın)
  * 		
  */
@@ -136,6 +150,10 @@ public class Example_021_Calculator {
 					turkceKarekter();
 					break;
 				}
+				case 9: {
+					soruDokuzCozum();
+					break;
+				}
 				
 			}
 			// Döngü sonu
@@ -171,6 +189,7 @@ public class Example_021_Calculator {
 		System.out.println("\t\t= 6- Girilen Kelimenin tersini yazdırma");
 		System.out.println("\t\t= 7- Girilen metinin içinde istenen Harfleri sayma");
 		System.out.println("\t\t= 8- Girilen metinin içinde Türkçe karakterleri bulma ve düzeltme");
+		System.out.println("\t\t= 9- Girilen metinin ters cevir e leri sil tekrar yaz bla bla bla");
 		System.out.print("\n\t\t= Lütfen Seçim yapınız. Çıkmak için [0] tuşlamanız yeterlidir.");
 		int sayi = secimTusu.nextInt();
 		return sayi;
@@ -232,31 +251,15 @@ public class Example_021_Calculator {
 		
 	}
 	
-	private static void reverseString() {
-		makeLine(TITLE_MENU);
-		System.out.print("\n\t\t= Metin Giriniz       : ");
-		String str = in.nextLine().trim();
-		int strLength = str.length();
-		System.out.print("\n\t\t= Metin Tersi         : ");
-		for (int i = strLength - 1; i >= 0; i--) {
-			System.out.print(str.substring(i, i + 1));
-		}
-	}
-	
 	private static void sayHarfIslemi() {
 		makeLine(TITLE_MENU);
-		int sum = 0;
 		System.out.print("\n\t\t= Metin Gir              : ");
 		String msg = in.nextLine().trim();
 		System.out.print("\n\t\t= Bulunacak Karakter     : ");
 		char chr = in.nextLine().charAt(0);
-		char[] charArray = msg.toCharArray();
-		for (int i = 0; i < msg.length(); i++) {
-			if (chr == charArray[i]) {
-				sum++;
-			}
-		}
-		System.out.printf("\n\t\t= %s Harfi Sayısı        : %d \n", chr, sum);
+		
+		System.out.printf("\n\t\t= %s Harfi Sayısı        : %d \n", chr,
+				ConsoleHelper.bulHarf(msg, String.valueOf(chr)));
 		
 	}
 	
@@ -297,6 +300,44 @@ public class Example_021_Calculator {
 		}
 		System.out.printf("\n\t\t= Düzeltilmiş Kelime        : %s \n", newStr);
 		
+	}
+	
+	private static void reverseString() {
+		makeLine(TITLE_MENU);
+		System.out.print("\n\t\t= Metin Giriniz       : ");
+		String str = in.nextLine().trim();
+		int strLength = str.length();
+		System.out.print("\n\t\t= Metin Tersi         : " + ConsoleHelper.reverseString(str));
+		
+	}
+	
+	private static void soruDokuzCozum() {
+		makeLine(TITLE_MENU);
+		
+		String newStr = "";
+		System.out.print("\n\t\t=Soru 9 - Metin Gir              : ");
+		String msg = in.nextLine().trim().toLowerCase();
+		
+		newStr = ConsoleHelper.reverseString(msg);
+		System.out.print("\n\t\t 1) Tersi: " + newStr);
+		newStr = ConsoleHelper.silTekSayiHarfMetin(newStr);
+		System.out.println("\n\t\t 2) TekSayilar sil: " + newStr);
+		System.out.println("\n\t\t 3)  Bulunan e sayısı: " + ConsoleHelper.bulHarf(newStr, "e"));
+		newStr = ConsoleHelper.cikarHarf(newStr, "e");
+		System.out.println("\n\t\t 4) e harfleri çıktı " + newStr);
+		newStr = farkliMethod(newStr);
+		System.out.println("\n\t\t 5) e 12346789 ekle " + newStr);
+	}
+	
+	private static String farkliMethod(String string) {
+		StringBuilder builder = new StringBuilder(string + " ");
+		
+		for (int i = 1; i <= 10; i++) {
+			builder.append((i % 5 == 0) ? "" : Integer.valueOf(i));
+		}
+		return builder.toString();
+		// StringBuilder StringBuffer nelerdir farkları
+		// sync
 	}
 	
 }
