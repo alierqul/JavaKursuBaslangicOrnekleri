@@ -46,7 +46,7 @@ public class Example_020_MenuClone {
 					;
 			}
 			
-		} while (!ConsoleHelper.secimYap("Çıkmak için [0] tuşlayınız.").equals("0"));
+		} while (!ConsoleHelper.selectMenu("Çıkmak için [0] tuşlayınız.").equals("0"));
 		
 	}
 	

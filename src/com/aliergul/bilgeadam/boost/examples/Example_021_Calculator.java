@@ -5,7 +5,7 @@ package com.aliergul.bilgeadam.boost.examples;
 
 import java.util.Scanner;
 
-import com.aliergul.bilgeadam.boost.util.ConsoleHelper;
+import com.aliergul.bilgeadam.boost.util.MyMethodExamples;
 
 /**
  * @author ERGUL
@@ -259,7 +259,7 @@ public class Example_021_Calculator {
 		char chr = in.nextLine().charAt(0);
 		
 		System.out.printf("\n\t\t= %s Harfi Sayısı        : %d \n", chr,
-				ConsoleHelper.sayHarf(msg, String.valueOf(chr)));
+				MyMethodExamples.sayHarf(msg, String.valueOf(chr)));
 		
 	}
 	
@@ -307,7 +307,7 @@ public class Example_021_Calculator {
 		System.out.print("\n\t\t= Metin Giriniz       : ");
 		String str = in.nextLine().trim();
 		int strLength = str.length();
-		System.out.print("\n\t\t= Metin Tersi         : " + ConsoleHelper.reverseString(str));
+		System.out.print("\n\t\t= Metin Tersi         : " + MyMethodExamples.reverseString(str));
 		
 	}
 	
@@ -318,12 +318,12 @@ public class Example_021_Calculator {
 		System.out.print("\n\t\t=Soru 9 - Metin Gir              : ");
 		String msg = in.nextLine().trim().toLowerCase();
 		
-		newStr = ConsoleHelper.reverseString(msg);
+		newStr = MyMethodExamples.reverseString(msg);
 		System.out.print("\n\t\t 1) Tersi: " + newStr);
-		newStr = ConsoleHelper.silTekSayiHarfMetin(newStr);
+		newStr = MyMethodExamples.silTekSayiHarfMetin(newStr);
 		System.out.println("\n\t\t 2) TekSayilar sil: " + newStr);
-		System.out.println("\n\t\t 3)  Bulunan e sayısı: " + ConsoleHelper.sayHarf(newStr, "e"));
-		newStr = ConsoleHelper.cikarHarf(newStr, "e");
+		System.out.println("\n\t\t 3)  Bulunan e sayısı: " + MyMethodExamples.sayHarf(newStr, "e"));
+		newStr = MyMethodExamples.cikarHarf(newStr, "e");
 		System.out.println("\n\t\t 4) e harfleri çıktı " + newStr);
 		newStr = farkliMethod(newStr);
 		System.out.println("\n\t\t 5) e 12346789 ekle " + newStr);
