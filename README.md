@@ -17,6 +17,7 @@
  **Stack:** Uygulama derlenirken değişkenler değerleri RAM 'e yüklenir. Değer tipleri int, short, byte, long, decimal, double, float dir. Heap e göre daha hızlıdır.
 
 **Heap:** Heap’ te stack bölgesi gibi RAM ’deki hafıza alanıdır. Nesnelerin hepsi Heap’ te bulunur ve veriler çalışma zamanında dinamik olarak yaratılırlar yani derleme aşamasında yer tahsis işlemi yapılmaz. Referans tipli değişkenlerin saklandıkları ve değişkene adres bilgisinin gönderildiği yerlerdir.
+
 ---
 
 # JAVA Diline Giriş
@@ -105,6 +106,7 @@ StringBuffer ve StringBuilder arasındaki farkların bir listesi aşağıda veri
 | StringBuffer, Java 1.0'da tanıtıldı | StringBuilder Java 1.5'te tanıtıldı |
 ---
 **Synchronized Nedir:** Senkronize şu anlama gelir: Sırayla, Eşzamanlı değil [Aynı anda değil]. Synchronized yöntemi, bir iş parçacığı zaten üzerinde çalışırken, üzerinde başka bir iş parçacığının çalışmasına izin vermez. Bu, eşzamanlılığı önler. senkronizasyon örneği: Bir sinema bileti almak ve kuyrukta beklemek istiyorsanız. bileti ancak önünüzdeki kişi bileti aldıktan sonra alacaksınız demek oluyor.
+
 **Thread safe means:** Bu yöntem, aynı anda birden fazla iş parçacığı tarafından sorunsuz bir şekilde erişilmek üzere güvenli hale gelir. synchronized anahtar sözcüğü, 'thread safe' elde etmenin yollarından biridir. Ancak Unutmayın: Aslında, birden fazla iş parçacığı senkronize yönteme erişmeye çalışırken, sırayı takip ederler, böylece erişim güvenli hale gelir. Aslında, aynı anda hareket ederler, ancak kaynağın senkronize davranışı nedeniyle aynı kaynağa (yöntem/bloğa) aynı anda erişemezler.
 
 

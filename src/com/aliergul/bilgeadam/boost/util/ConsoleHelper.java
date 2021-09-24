@@ -13,6 +13,35 @@ public class ConsoleHelper {
 	private static Scanner secim = new Scanner(System.in);
 	
 	public static void main(String[] args) {
+		printZigZag("PAYPALISHIRING", 3);
+	}
+	
+	/*
+	 * P A H N 0 4 8 C
+	 * APLSIIG 13579BD
+	 * Y I R 2 6 A
+	 */
+	private static void printZigZag(String msg, int row) {
+		
+		String[] rows = new String[row];
+		int rowNumber = 0;
+		int plus = +1;
+		for (int i = 0; i < rows.length; i++) {
+			rows[i] = "";
+		}
+		
+		for (int i = 0; i < msg.length(); i++) {
+			String str = String.valueOf(msg.charAt(i));
+			rows[rowNumber] = rows[rowNumber].concat(str);
+			rowNumber += plus;
+			if (rowNumber == (row - 1) || rowNumber == 0) {
+				plus *= -1;
+			}
+		}
+		
+		for (int j = 0; j < row; j++) {
+			System.out.println(rows[j]);
+		}
 		
 	}
 	
