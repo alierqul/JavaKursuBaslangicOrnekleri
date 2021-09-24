@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 /**
  * @author ERGUL
- *
+ *         Github Prush
  */
 public class ConsoleHelper {
 	private static Scanner secim = new Scanner(System.in);
