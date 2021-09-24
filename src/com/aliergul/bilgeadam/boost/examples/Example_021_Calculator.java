@@ -259,7 +259,7 @@ public class Example_021_Calculator {
 		char chr = in.nextLine().charAt(0);
 		
 		System.out.printf("\n\t\t= %s Harfi Sayısı        : %d \n", chr,
-				ConsoleHelper.bulHarf(msg, String.valueOf(chr)));
+				ConsoleHelper.sayHarf(msg, String.valueOf(chr)));
 		
 	}
 	
@@ -322,7 +322,7 @@ public class Example_021_Calculator {
 		System.out.print("\n\t\t 1) Tersi: " + newStr);
 		newStr = ConsoleHelper.silTekSayiHarfMetin(newStr);
 		System.out.println("\n\t\t 2) TekSayilar sil: " + newStr);
-		System.out.println("\n\t\t 3)  Bulunan e sayısı: " + ConsoleHelper.bulHarf(newStr, "e"));
+		System.out.println("\n\t\t 3)  Bulunan e sayısı: " + ConsoleHelper.sayHarf(newStr, "e"));
 		newStr = ConsoleHelper.cikarHarf(newStr, "e");
 		System.out.println("\n\t\t 4) e harfleri çıktı " + newStr);
 		newStr = farkliMethod(newStr);

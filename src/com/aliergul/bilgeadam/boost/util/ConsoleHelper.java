@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 /**
  * @author ERGUL
- *         Github Prush
+ * 
  */
 public class ConsoleHelper {
 	private static Scanner secim = new Scanner(System.in);
@@ -56,7 +56,7 @@ public class ConsoleHelper {
 		
 	}
 	
-	public static int bulHarf(String msg, String key) {
+	public static int sayHarf(String msg, String key) {
 		char[] s = msg.toLowerCase().toCharArray();
 		int count = 0;
 		for (int i = 0; i < msg.length(); i++) {
