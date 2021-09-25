@@ -16,7 +16,7 @@
  
  **Stack:** Uygulama derlenirken değişkenler değerleri RAM 'e yüklenir. Değer tipleri int, short, byte, long, decimal, double, float dir. Heap e göre daha hızlıdır.
 
-**Heap:** Heap’ te stack bölgesi gibi RAM ’deki hafıza alanıdır. Nesnelerin hepsi Heap’ te bulunur ve veriler çalışma zamanında dinamik olarak yaratılırlar yani derleme aşamasında yer tahsis işlemi yapılmaz. Referans tipli değişkenlerin saklandıkları ve değişkene adres bilgisinin gönderildiği yerlerdir.
+ **Heap: ** Heap' te stack bölgesi gibi RAM ’deki hafıza alanıdır. Nesnelerin hepsi Heap’ te bulunur ve veriler çalışma zamanında dinamik olarak yaratılırlar yani derleme aşamasında yer tahsis işlemi yapılmaz. Referans tipli değişkenlerin saklandıkları ve değişkene adres bilgisinin gönderildiği yerlerdir.
 
 ---
 
@@ -109,7 +109,43 @@ StringBuffer ve StringBuilder arasındaki farkların bir listesi aşağıda veri
 
 **Thread safe means:** Bu yöntem, aynı anda birden fazla iş parçacığı tarafından sorunsuz bir şekilde erişilmek üzere güvenli hale gelir. synchronized anahtar sözcüğü, 'thread safe' elde etmenin yollarından biridir. Ancak Unutmayın: Aslında, birden fazla iş parçacığı senkronize yönteme erişmeye çalışırken, sırayı takip ederler, böylece erişim güvenli hale gelir. Aslında, aynı anda hareket ederler, ancak kaynağın senkronize davranışı nedeniyle aynı kaynağa (yöntem/bloğa) aynı anda erişemezler.
 
+---
+### String Formatlama ###
 
+***System.out.printf(" %-15s %03d \n ", s1 , x );***
+
+printf fonksiyonunda ;
+**%d** int değişkenini
+**%s** String değişkenini
+ifade eder.
+**%-15s**  Sağına 15 karakter tamamlayacak kadar Boşluk koyar.
+**%15s**   Soluna 15 karakter tamamlayacak kadar Boşluk koyar.
+**%03d**  Rakamlarda 3 basamağa 0 ile tamamlar. 006, 055 gibi 
+**"%.2f"** Noktalı sayılar için noktadan sonra 2 basamak alır. 3.14
+
+**/n** İmleç, Bir alt Satır başına geçer.
+**/t** İmleç, Bir -tab tuşu kadar boşluk bırakır.
+**/r** İmleç, Bulunduğu Satırın satır başına geçer.
+
+**JAVA Para Birimi Dönüştürücü:**
+NumberFormat chinaParaBirimi = NumberFormat.getCurrencyInstance(new Locale("zh", "CN"));
+
+NumberFormat franParaBirimi = NumberFormat.getCurrencyInstance(new Locale("fr", "FR"));
+
+NumberFormat trParaBirimi = NumberFormat.getCurrencyInstance(new Locale("tr", "TR"));
+
+**JAVA Tarih Dönüştürücü:**<p>
+SimpleDateFormat dfGun=new SimpleDateFormat("dd-mm-yyyy EEEEE");
+
+Date d=new Date();<p>
+Calendar cal = Calendar.getInstance();<p>
+cal.set(Calendar.MONTH, (month-1));<p>
+cal.set(Calendar.DAY_OF_MONTH, day);<p>
+cal.set(Calendar.YEAR, year);<p>
+d=cal.getTime();<p>
+String gun= dfGun.format(d).toUpperCase();<p>
+
+------------------------------------------------------------
 
 
 

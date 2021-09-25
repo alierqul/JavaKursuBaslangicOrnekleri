@@ -3,6 +3,8 @@
  */
 package com.aliergul.bilgeadam.boost.util;
 
+import java.util.StringTokenizer;
+
 /**
  * @author ERGUL
  *
@@ -102,6 +104,30 @@ public class MyMethodExamples {
 		
 	}
 	
+	/**
+	 * Metin baş harfini büyük çeviren method
+	 * 
+	 * @param A = "adana spor"
+	 * @return Adana Spor
+	 */
+	public static String toTitle(String metin) {
+		StringTokenizer st = new StringTokenizer(metin, " ");
+		StringBuilder newMetin = new StringBuilder();
+		while (st.hasMoreTokens()) {
+			String A = st.nextToken();
+			A = A.substring(0, 1).toUpperCase().concat(A.substring(1, A.length()));
+			newMetin.append(A);
+		}
+		
+		return newMetin.toString();
+	}
+	
+	/**
+	 * 
+	 * @param msg = adana
+	 * @param key = a
+	 * @return = dn
+	 */
 	public static String cikarHarf(String msg, String key) {
 		StringBuilder newStr = new StringBuilder("");
 		char[] s = msg.toLowerCase().toCharArray();

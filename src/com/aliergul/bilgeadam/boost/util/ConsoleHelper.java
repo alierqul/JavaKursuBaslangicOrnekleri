@@ -7,7 +7,17 @@ import java.util.Scanner;
 
 /**
  * @author ERGUL
+ *         if(x>=-32768 && x<=32767){
+ *         System.out.println("* short");
+ *         }
  * 
+ *         if(x>=-4294967296L && x<=4294967295L){
+ *         System.out.println("* int");
+ *         }
+ * 
+ *         if(x>=-9223372036854775808L && x<=9223372036854775807L) {
+ *         System.out.println("* long");
+ *         }
  */
 public class ConsoleHelper {
 	private static Scanner secim = new Scanner(System.in);
@@ -19,6 +29,7 @@ public class ConsoleHelper {
 	public static String selectMenu(String msg) {
 		print(msg, 2, false);
 		String s = secim.next().trim();
+		
 		return s;
 	}
 	
