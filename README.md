@@ -145,8 +145,25 @@ SimpleDateFormat dfGun=new SimpleDateFormat("dd-mm-yyyy EEEEE");
     String gun= dfGun.format(d).toUpperCase();<p>
 
 ------------------------------------------------------------
+## Argüman ve Parametre Kavramı
+**Argüman** Program akışı içinde değişkenlere verilen gerçek değerlerdir.
 
+**Parametre** ise bir method da işlenmesi için kullandığımız referans değerlerdir.
 
+    public class Lesson {
+    	public static void main(String[] args) {
+    		int aKenari=10;		//Gerçek Değerler
+    		int bKenari=6; 	    //Gerçek Değerler
+    		hesaplaAlan(aKenari,bKenari);
+    	}
+    	
+    	public static int hesaplaAlan(int a, int b) { // kenar uzunluklarının temsili bir değeridir. 
+    		return a*b; // method bitene kadar hafızada saklanan geçici referans değerleri diyebiliriz.
+    	}	// method tamamlandıktan sonra bu parametreler
+    		// GarbageCollector tarafından temizlenir.
+    }
+
+------------------------------------------------------------
 
 ## **By pass value ile By pass referans arasındaki farklar, örnek üzerinden ?** ##
 
