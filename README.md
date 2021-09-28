@@ -157,6 +157,21 @@ Değişken geçirme sistemi olarak tanımlanır. Bir Metoda parametre atadığı
 
 ------------------------------------------------------------
 
+## Java da Tip Dönüşümleri (Type Casting)
+
+Java nesne tabanlı bir dildir ve tüm nesneler Object sınıfından türetilmiştir. Bu yüzden çoğu nesne birbirini kapsayarak ilerlemektedir.
+Bir birini kapsayan nesneler arasında özelikerini uyumlarını ve kapsamlarını dikkate alarak birbirine dönüşterebiliriz. Örnek verecek olursak. Sayı nesnelerinden bahsedebiliriz.
+
+`byte<short<int<long<float<double
+
+tüm bu veri tiplerini ele alalım. boyutlarını dikkate alırsak taşmayacak şekilde birbirlerine çevirebiliriz. dönüştürebiliriz. 
+ya da kendi nesnelerimizle uğraşırkende kullanabiliriz.
+
+    insan>ogrenci>ogretmen>prof>yonetici
+
+en Kapsayıcı sınıfımız insan sınıfı  yönetici bazı özelliklerini kullanmadığımızda insan sınıfına dönüştürebiliriz. insan sınıfına uygun vasıfları eklediğimizde yönetici sınıfına dönüştürebiliriz.
+
+------------------------------------------------------------
 
 # # JDK 17'nin yeni özellikleri şunları içerir:
 
