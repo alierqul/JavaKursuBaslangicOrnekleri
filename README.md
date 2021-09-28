@@ -185,6 +185,30 @@ Bir Java öğesi (değişken, metot, sınıf, paket) tanımlanırken, o öğeye 
 
 ------------------------------------------------------------
 
+# Java’da Final Keyword
+Java’da final keyword (anahtar sözcüğü) bir çok yerde, farklı amaçla kullanılır. Bunları sırayla inceleyelim;
+
+ -  `final int PI=3.14;`
+Bir Değişken Final Tanımlandığında sadece bir sefer değer ataması yapılır. ve bu final değeri yani son değeri olucaktır. Daha sonra bu değikene farklı bir değer atamaya çalışırsak İDE izin vermicektir.
+ - `final class ThisClassCannotBeExtends { }`Bir class final ile tanımlanmışsa bu class’dan kalıtım alınamaz. ThisClassCannotBeExtends class’ından kalıtım alınmaya çalışıldığında program hata verecektir.
+
+     *public class TestFinalClass extends ThisClassCannotBeExtends 
+     {  //Hata vericektir.  }*
+
+ - Bir metot final olarak tanımlanmışsa, metodun tanımlı olduğu
+   class’dan bir kalıtım alındığında, ilgili metot override edilemez.  ThisMethodCannotBeOverriden class’ı, TestFinalMethod class’ı
+   tarafında kalıtım alınmıştır. İlgili metot final olduğundan bu örnek
+   hata verecektir.
+
+    *public class TestFinalMethod extends SuperClass   {
+        public void ThisMethodCannotBeOverriden()   {   } 
+    }
+    class SuperClass {
+    public final void ThisMethodCannotBeOverriden()   {   }  
+    }*
+
+------------------------------------------------------------
+
 # # JDK 17'nin yeni özellikleri şunları içerir:
 
 - **[Context-specific deserialization filters]** 
