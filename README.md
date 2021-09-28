@@ -173,6 +173,18 @@ en Kapsayıcı sınıfımız insan sınıfı  yönetici bazı özelliklerini kul
 
 ------------------------------------------------------------
 
+## **Erişim Belirtkeleri (Access Modifiers)**
+Bir Java öğesi (değişken, metot, sınıf, paket) tanımlanırken, o öğeye kimlerin erişebileceğini belirtme olanağı vardır. Bunlara Erişim Belirtkeleri (Access modifiers, access levels) denir.
+| Erişim Belirtkesi | İzinler |
+|--|--|
+| public |  Bütün sınıflar erişebilir|
+| private | Alt-sınıf dahil başka hiçbir sınıf erişemez |
+| protected |  Alt-sınıflar ve aynı pakettekiler erişebilir |
+|  private protected | Yalnızca alt sınıflar erişebilir |
+|  default (ön-tanımlı)| Aynı pakettekiler erişebilir |
+
+------------------------------------------------------------
+
 # # JDK 17'nin yeni özellikleri şunları içerir:
 
 - **[Context-specific deserialization filters]** 
