@@ -28,7 +28,16 @@ public class Example_022_ArrayOrnek {
 		
 		int[] intArray = singleArrayCreate();
 		printArray("Diziler", intArray);
+		System.out.println("====================");
 		printArray("Asal Sayılar", arrayAsalSayilar(intArray));
+		System.out.println("====================");
+		printArray("Toplam: ", new int[] { sumArrayList(intArray) });
+		System.out.println("====================");
+		printArray("Tek Sayılar: ", oddArrayList(intArray));
+		System.out.println("====================");
+		printArray("çift Sayılar: ", evenArrayList(intArray));
+		System.out.println("====================");
+		
 		faktoriyel(enKucuk(intArray));
 		iconDiegonal();
 		diegonalMatrixCreate(intArray);
@@ -109,7 +118,7 @@ public class Example_022_ArrayOrnek {
 		for (int i = num; i >= 1; i--) {
 			sum = sum.multiply(BigInteger.valueOf((long) i));
 		}
-		System.out.println(num + " Faktöriyel :" + sum);
+		System.out.println("En Küçük " + num + " Faktöriyeli :" + sum);
 		
 	}
 	
@@ -175,6 +184,67 @@ public class Example_022_ArrayOrnek {
 			}
 		}
 		return count;
+	}
+	
+	/**
+	 * Dizi Elemanlarını Topluyor.
+	 * 
+	 * @param intArray
+	 * @return
+	 */
+	public static int sumArrayList(int[] intArray) {
+		
+		int sum = 0;
+		for (int num : intArray) {
+			sum += num;
+		}
+		return sum;
+	}
+	
+	/**
+	 * Tek Sayılar
+	 * 
+	 * @param intArray
+	 * @return
+	 */
+	public static int[] oddArrayList(int[] intArray) {
+		
+		int count = 0;
+		
+		for (int num : intArray) {
+			if (num % 2 != 0) {
+				count++;
+			}
+		}
+		int[] oddArray = new int[count];
+		count = 0;
+		for (int num : intArray) {
+			if (num % 2 != 0) {
+				oddArray[count] = num;
+				count++;
+			}
+		}
+		return oddArray;
+	}
+	
+	public static int[] evenArrayList(int[] intArray) {
+		
+		int count = 0;
+		
+		for (int num : intArray) {
+			if (num % 2 == 0) {
+				count++;
+			}
+		}
+		int[] evenArray = new int[count];
+		count = 0;
+		for (int num : intArray) {
+			if (num % 2 == 0) {
+				evenArray[count] = num;
+				count++;
+			}
+		}
+		return evenArray;
 	}
 	
 	public static boolean isAsal(int sayi) {
