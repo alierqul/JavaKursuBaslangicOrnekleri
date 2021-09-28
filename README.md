@@ -128,25 +128,34 @@ ifade eder.
 **/r** İmleç, Bulunduğu Satırın satır başına geçer.
 
 **JAVA Para Birimi Dönüştürücü:**
-NumberFormat chinaParaBirimi = NumberFormat.getCurrencyInstance(new Locale("zh", "CN"));
 
-NumberFormat franParaBirimi = NumberFormat.getCurrencyInstance(new Locale("fr", "FR"));
-
-NumberFormat trParaBirimi = NumberFormat.getCurrencyInstance(new Locale("tr", "TR"));
+    	NumberFormat chinaParaBirimi = NumberFormat.getCurrencyInstance(new Locale("zh", "CN"));
+        NumberFormat franParaBirimi = NumberFormat.getCurrencyInstance(new Locale("fr", "FR"));
+        NumberFormat trParaBirimi = NumberFormat.getCurrencyInstance(new Locale("tr", "TR"));
 
 **JAVA Tarih Dönüştürücü:**<p>
 SimpleDateFormat dfGun=new SimpleDateFormat("dd-mm-yyyy EEEEE");
 
-Date d=new Date();<p>
-Calendar cal = Calendar.getInstance();<p>
-cal.set(Calendar.MONTH, (month-1));<p>
-cal.set(Calendar.DAY_OF_MONTH, day);<p>
-cal.set(Calendar.YEAR, year);<p>
-d=cal.getTime();<p>
-String gun= dfGun.format(d).toUpperCase();<p>
+    Date d=new Date();<p>
+    Calendar cal = Calendar.getInstance();<p>
+    cal.set(Calendar.MONTH, (month-1));<p>
+    cal.set(Calendar.DAY_OF_MONTH, day);<p>
+    cal.set(Calendar.YEAR, year);<p>
+    d=cal.getTime();<p>
+    String gun= dfGun.format(d).toUpperCase();<p>
 
 ------------------------------------------------------------
 
+
+
+## **By pass value ile By pass referans arasındaki farklar, örnek üzerinden ?** ##
+
+
+Değişken geçirme sistemi olarak tanımlanır. Bir Metoda parametre atadığımızda parametrelerin gerçek değerlerinin mi iletildiği yoksa referans değerlerinin mi iletildiğini ifade eder. Aradaki farkdan bahsedecek olursak, Java by pass value bir dildir. Metod a bir değişken gönderdiğimiz de gönderdiğimiz değişken bellekte bir kopyasını yaratır. ve bu kopya değer üzerinden işlem sağlar. Orjinal değişkenimiz bozulmaz. Referans seçeneğinde ise değişkenin referans ı metoda gönderlir. bu sayede değişkende yapılan değişiklikler orjinal değerini de etkileyecektir.
+
+[Kaynak ve Detaylı Açıklama](https://hasancelik.org/java-hafiza-yonetimi/Java-memory-models-pass-by-value-reference/)
+
+------------------------------------------------------------
 
 
 # # JDK 17'nin yeni özellikleri şunları içerir:
