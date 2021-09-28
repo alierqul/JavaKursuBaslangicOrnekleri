@@ -209,6 +209,38 @@ Bir Değişken Final Tanımlandığında sadece bir sefer değer ataması yapıl
 
 ------------------------------------------------------------
 
+## Java - Static Anahtar Kelimesi
+
+ Bir sınıf oluşturduğumuzda genellikle ilk önce değişkenlerimizi tanımlarız. Bu tanımladığımız değişkenler aslında o sınıftan oluşturduğumuz her nesne için ayrı ayrı oluşturulurlar. 
+ Örnek olarak Bir ElmaAğacı Sınıfımız olsun bu nesnemizin ürettiği her elma ve yaprak için dalında bir yer ayırır. Bunlara ***nesne değişkeni*** diyebiliriz. Birde ağacın kendini yansıtan  özellikleri vardır ; yaşı, boyu, gibi  özellikleri agaca aittir.  Bu değişkenlere de ***Sınıf değişkenleri*** deriz.
+  ***Static*** anahtar kelimesini kullanarak tanımladığımız değişkenler sınıf değişkeni olarak adlandırılır.
+
+    public class ElmaAgaci{
+    		static int yasAgac; //Agaç a ait Sınıf Değ.
+    		static int boyAgac; //Ağaç a Ait Sınıf Değ.
+    		static int elmaAdedi; // Ağaç a Ait Sınıf Değ.
+    		
+    		 String elmaBoyutu; // ürettiği her bir nesne için degişken Nesne Değ.
+    		 String elmaRengi; // ürettiği her bir nesne için degişken Nesne Değ.
+    		 String yaprakBoyutu;// ürettiği her bir nesne için degişken Nesne Değ.
+    		 String yaprakRengi; // ürettiği her bir nesne için degişken Nesne Değ.
+  	
+    	}
+
+Static Değişkenleri kullanmak için bir nesne oluşturmaya gerek yoktur. neslerden bağımsız sadece Sınıf ile ilgili durumlarda kullanılır. `ElmaAgaci.yasAgac` şeklinde doğrudan ulaşılabilir.  
+
+    public static void sulaAgaci() {
+    			 boyAgac++;
+    		 }
+
+Şunu da hatırlatmakta fayda var; static metodlar içinden static olmayan bir öğeye erişemeyiz. Bu aslında static metodların en önemli kuralıdır.
+sulaAgaci metodumuzda herhangi bir elmaBoyutu değişkenine ulaşamayız. 
+
+**Static Bloklar**
+static değişkenlere ilk değer atamasını yapmak için kullanılan kod bloklarıdır. Bunlara “static initializer” denmektedir. Bu bloklar static değişkenler belleğe yüklendikten hemen sonra çalıştırılırlar. JVM(Java Virtual Machine), o sınıfa ait bir nesne oluşturmadan önce static blokların çalışmasını garanti eder.
+
+------------------------------------------------------------
+
 # # JDK 17'nin yeni özellikleri şunları içerir:
 
 - **[Context-specific deserialization filters]** 
