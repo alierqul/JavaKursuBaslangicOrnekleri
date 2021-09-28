@@ -9,7 +9,7 @@ import java.util.StringTokenizer;
  * @author ERGUL
  *
  */
-public class MyMethodExamples {
+public class MyStringHelper {
 	
 	/**
 	 * @param args

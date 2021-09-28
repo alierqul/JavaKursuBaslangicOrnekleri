@@ -33,6 +33,7 @@ public class Anagrams {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		Anagrams s = new Anagrams();
 		if (isAnagram("margana", "anagram")) {
 			System.out.println("YES");
 		} else
