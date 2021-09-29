@@ -70,4 +70,16 @@ public class OdevMain {
 		
 	}
 	
+	public class Lesson {
+		public static void main(String[] args) {
+			int aKenari = 10; // Gerçek Değerler
+			int bKenari = 6; // Gerçek Değerler
+			hesaplaAlan(aKenari, bKenari);
+		}
+		
+		public static int hesaplaAlan(int a, int b) { // kenar uzunluklarının temsili bir değeridir.
+			return a * b; // method bitene kadar hafızada saklanan geçici referans değerleri diyebiliriz.
+		} // method tamamlandıktan sonra bu parametreler
+			// GarbageCollector tarafından temizlenir.
+	}
 }

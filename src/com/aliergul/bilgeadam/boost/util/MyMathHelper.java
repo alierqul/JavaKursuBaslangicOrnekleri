@@ -31,6 +31,10 @@ public class MyMathHelper {
 	 * @return
 	 */
 	public static boolean isAsal(int sayi) {
+		if (sayi <= 1)
+			return false;
+		if (sayi == 2)
+			return true;
 		if (sayi != 2 && sayi % 2 == 0)
 			return false;
 		for (int i = 3; i < sayi; i += 2) {
