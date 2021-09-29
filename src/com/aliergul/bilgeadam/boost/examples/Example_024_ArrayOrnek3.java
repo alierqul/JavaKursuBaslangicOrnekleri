@@ -32,7 +32,7 @@ public class Example_024_ArrayOrnek3 {
 		// TODO Auto-generated method stub
 		for (int i = 0; i < 8; i++) {
 			for (int j = 0; j < 8; j++) {
-				ches[i][j] = String.valueOf(HARF[i]) + (8 - j);
+				ches[i][j] = String.valueOf(HARF[7 - i]) + (j + 1);
 			}
 		}
 	}
@@ -41,7 +41,14 @@ public class Example_024_ArrayOrnek3 {
 		// TODO Auto-generated method stub
 		for (int i = 0; i < 8; i++) {
 			for (int j = 0; j < 8; j++) {
-				System.out.printf("[ %1s ] ", ches[i][j]);
+				
+				if (!ches[i][j].equals(ICON_HINT)) {
+					System.out.printf("[ %1s ] ", ches[i][j]);
+				} else {
+					
+					System.out.printf("[ %1s ] ", ches[i][j]);
+					
+				}
 				
 			}
 			System.out.printf("\n\n");
@@ -58,10 +65,10 @@ public class Example_024_ArrayOrnek3 {
 			location = in.nextLine().trim().toUpperCase();
 			
 			if (location.length() == 2 && row != -1 && isRakam(location.charAt(1))) {
-				row = findKey(location.charAt(0));
-				col = Integer.parseInt(String.valueOf(location.charAt(1)));
-				ches[row][8 - col] = "At";
-				hintHorseTarget(row, 8 - col);
+				row = 7 - findKey(location.charAt(0));
+				col = Integer.parseInt(String.valueOf(location.charAt(1))) - 1;
+				ches[row][col] = "At";
+				hintHorseTarget(row, col);
 				secimYapilmadi = false;
 			}
 		} while (secimYapilmadi);
