@@ -76,16 +76,11 @@ public class Example_024_ArrayOrnek3 {
 	
 	private static void hintHorseTarget(int row, int col) {
 		// TODO Auto-generated method stub
+		int[][] moves = { { 2, -1 }, { 2, 1 }, { -2, -1 }, { -2, +1 }, { -1, 2 }, { 1, 2 }, { -1, -2 }, { +1, -2 } };
 		
-		hintCreateTarget(row + 2, col - 1);
-		hintCreateTarget(row + 2, col + 1);
-		hintCreateTarget(row - 2, col - 1);
-		hintCreateTarget(row - 2, col + 1);
-		// **
-		hintCreateTarget(row - 1, col + 2);
-		hintCreateTarget(row + 1, col + 2);
-		hintCreateTarget(row - 1, col - 2);
-		hintCreateTarget(row + 1, col - 2);
+		for (int[] move : moves) {
+			hintCreateTarget(row + move[0], col + move[1]);
+		}
 		
 		viewChes();
 		System.out.println("Bir Tuşa basınız: ");
