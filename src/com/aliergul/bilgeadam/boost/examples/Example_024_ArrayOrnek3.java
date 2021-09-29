@@ -32,7 +32,7 @@ public class Example_024_ArrayOrnek3 {
 		// TODO Auto-generated method stub
 		for (int i = 0; i < 8; i++) {
 			for (int j = 0; j < 8; j++) {
-				ches[i][j] = String.valueOf(HARF[i]) + (j + 1);
+				ches[i][j] = String.valueOf(HARF[i]) + (8 - j);
 			}
 		}
 	}
@@ -52,6 +52,7 @@ public class Example_024_ArrayOrnek3 {
 		// TODO Auto-generated method stub
 		String location = "";
 		int row = 0, col = 0;
+		boolean secimYapilmadi = true;
 		do {
 			System.out.print("Tahta üzerinde konum seçiniz : ");
 			location = in.nextLine().trim().toUpperCase();
@@ -59,10 +60,11 @@ public class Example_024_ArrayOrnek3 {
 			if (location.length() == 2 && row != -1 && isRakam(location.charAt(1))) {
 				row = findKey(location.charAt(0));
 				col = Integer.parseInt(String.valueOf(location.charAt(1)));
-				ches[row][col - 1] = "At";
-				hintHorseTarget(row, col - 1);
+				ches[row][8 - col] = "At";
+				hintHorseTarget(row, 8 - col);
+				secimYapilmadi = false;
 			}
-		} while (true);
+		} while (secimYapilmadi);
 	}
 	
 	private static void hintHorseTarget(int row, int col) {
@@ -79,7 +81,9 @@ public class Example_024_ArrayOrnek3 {
 		hintCreateTarget(row + 1, col - 2);
 		
 		viewChes();
+		System.out.println("Bir Tuşa basınız: ");
 		in.hasNext();
+		in.nextLine();
 	}
 	
 	private static void hintCreateTarget(int newRow, int newCol) {
