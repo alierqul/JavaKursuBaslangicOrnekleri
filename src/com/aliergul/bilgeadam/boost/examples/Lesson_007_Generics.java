@@ -28,9 +28,19 @@ public class Lesson_007_Generics {
 	
 }
 
-class GenericsClass {
+class GenericsClass<T> {
 	private String adi;
 	private String soyadi;
+	// Tanımlarken verilen Type göre Şekil alan değişken
+	private T genericData;
+	
+	public T getGenericData() {
+		return genericData;
+	}
+	
+	public void setGenericData(T genericData) {
+		this.genericData = genericData;
+	}
 	
 	public GenericsClass(String adi, String soyadi) {
 		super();
