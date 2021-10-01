@@ -12,10 +12,10 @@ import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 
 /**
- * System.out.println(BAUtils.dateAsString(Long.parseLong("1632646800")));
- * System.out.println(BAUtils.timeAsString(Long.parseLong("1632646800")));
+ * System.out.println(MyOnlineDataHelper.dateAsString(Long.parseLong("1632646800")));
+ * System.out.println(MyOnlineDataHelper.timeAsString(Long.parseLong("1632646800")));
  * System.out.println("Enlem / Boylam Sorgusu : " +
- * BAUtils.getDirectData("Edremit","Balıkesir", "TR"));
+ * MyOnlineDataHelper.getDirectData("Edremit","Balıkesir", "TR"));
  * System.out.println("Günlük Hava Raporu : " + BAUtils.getWeatherData(39.5961,
  * 22.0244));
  * System.out.println("15 Saatlik Hava Raporu : " +
