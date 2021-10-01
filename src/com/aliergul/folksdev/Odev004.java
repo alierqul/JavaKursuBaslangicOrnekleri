@@ -3,8 +3,6 @@
  */
 package com.aliergul.folksdev;
 
-import com.aliergul.bilgeadam.boost.util.MyMathHelper;
-
 /**
  * 1-100 arasında Asal olan sayıları işaretleyen program.
  * [ 01 ] [ 02 ] [ 03 ] [ 04 ] [ 05 ] [ 06 ] [ 07 ] [ 08 ] [ 09 ] [ 10 ]
@@ -29,7 +27,7 @@ public class Odev004 {
 	public static void main(String[] args) {
 		
 		for (int i = 1; i <= 100; i++) {
-			if (MyMathHelper.isAsal(i)) {
+			if (isAsal(i)) {
 				System.out.print("");
 				System.err.printf("[ %02d", i);
 				System.out.print("");
@@ -42,4 +40,25 @@ public class Odev004 {
 		
 	}
 	
+	/**
+	 * Verilen Sayının asal olup olmadığını döndüren method:
+	 * 
+	 * @param sayi
+	 * @return
+	 */
+	public static boolean isAsal(int sayi) {
+		if (sayi <= 1)
+			return false;
+		if (sayi == 2)
+			return true;
+		if (sayi != 2 && sayi % 2 == 0)
+			return false;
+		for (int i = 3; i < sayi; i += 2) {
+			
+			if (sayi % i == 0) {
+				return false;
+			}
+		}
+		return true;
+	}
 }
