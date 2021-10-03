@@ -7,9 +7,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.time.LocalDateTime;
-import java.time.ZoneOffset;
-import java.time.format.DateTimeFormatter;
+import java.text.SimpleDateFormat;
 
 /**
  * System.out.println(MyOnlineDataHelper.dateAsString(Long.parseLong("1632646800")));
@@ -40,8 +38,9 @@ public class MyOnlineDataHelper {
 	 * @return
 	 */
 	public static String dateAsString(long timestamp) {
-		LocalDateTime dateTime = LocalDateTime.ofEpochSecond(timestamp, 0, ZoneOffset.UTC);
-		return dateTime.format(DateTimeFormatter.ofPattern("dd.MMM.yyyy"));
+		SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy EEEEE");
+		
+		return format.format(timestamp);
 	}
 	
 	/**
@@ -51,8 +50,10 @@ public class MyOnlineDataHelper {
 	 * @return
 	 */
 	public static String timeAsString(long timestamp) {
-		LocalDateTime dateTime = LocalDateTime.ofEpochSecond(timestamp, 0, ZoneOffset.UTC);
-		return dateTime.format(DateTimeFormatter.ofPattern("HH:mm"));
+		SimpleDateFormat format = new SimpleDateFormat("HH:mm");
+		
+		return format.format(timestamp);
+		
 	}
 	
 	/**
