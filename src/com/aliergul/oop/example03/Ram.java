@@ -1,4 +1,4 @@
-package com.alierul.oop.example03;
+package com.aliergul.oop.example03;
 
 public class Ram extends PcItem {
 	

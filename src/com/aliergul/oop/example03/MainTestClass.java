@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.alierul.oop.example03;
+package com.aliergul.oop.example03;
 
 /**
  * Anakart
