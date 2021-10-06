@@ -4,8 +4,8 @@ public class Usb extends PcItem {
 	private String usbType = "";
 	private String usbSpeed = "";
 	
-	public Usb(String name, String model, String year, double price, String usbType, String usbSpeed) {
-		super(name, model, year, price);
+	public Usb(String name, String model, String year, String usbType, String usbSpeed) {
+		super(model, year);
 		this.usbSpeed = usbSpeed;
 		this.usbType = usbType;
 	}

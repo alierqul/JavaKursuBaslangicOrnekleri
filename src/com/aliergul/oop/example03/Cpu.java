@@ -1,22 +1,31 @@
 package com.aliergul.oop.example03;
 
-public class Cpu extends PcItem {
-	private String pin = "";
+public class Cpu extends PcItem implements IFinans {
 	
-	public Cpu(String name, String model, String year, double price, String pin) {
-		super(name, model, year, price);
+	private String pin = "";
+	private double pierce = 0d;
+	
+	public Cpu(String model, String year, double pierce, String pin) {
+		super(model, year);
+		this.pierce = pierce;
 		this.pin = pin;
+		
 	}
 	
 	@Override
 	public String getItemName() {
-		
 		return "Cpu";
 	}
 	
 	@Override
-	public String toString() {
-		return "Cpu [pin=" + pin + "" + ", getItemName()=" + getItemName() + ",super = " + super.toString() + "]";
+	public void setNewPierce(double pierce) {
+		this.pierce = pierce;
+		
+	}
+	
+	@Override
+	public double getNewPierce() {
+		return this.pierce;
 	}
 	
 }

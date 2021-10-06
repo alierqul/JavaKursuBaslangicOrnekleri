@@ -1,21 +1,19 @@
 /**
  * 
  */
-package com.aliergul.bilgeadam.boost.examples;
+package com.aliergul.oop.atm.model;
 
 /**
  * @author ERGUL
  *
  */
-public class DenemeYanilma {
+public class AtmTespApp {
 	
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		String A = "ali";
 		
-		System.out.println(A);
 	}
 	
 }

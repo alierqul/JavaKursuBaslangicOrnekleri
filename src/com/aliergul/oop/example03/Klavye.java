@@ -2,10 +2,12 @@ package com.aliergul.oop.example03;
 
 public class Klavye extends PcItem {
 	private String keyType;
+	private boolean isMekanic = false;
 	
-	public Klavye(String name, String model, String year, double price, String keyType) {
-		super(name, model, year, price);
+	public Klavye(String model, String year, String keyType, boolean isMekanic) {
+		super(model, year);
 		this.keyType = keyType;
+		this.isMekanic = isMekanic;
 	}
 	
 	@Override
