@@ -5,25 +5,14 @@ package com.aliergul.bilgeadam.boost.util;
 
 import java.util.Map;
 import java.util.Scanner;
-import java.util.TreeMap;
 
 /**
- * @author ERGUL if(x>=-32768 && x<=32767){ System.out.println("* short"); }
- * 
- *         if(x>=-4294967296L && x<=4294967295L){ System.out.println("* int"); }
- * 		
- *         if(x>=-9223372036854775808L && x<=9223372036854775807L) {
- *         System.out.println("* long"); }
+ * @author ERGUL
  */
 public class ConsoleHelper {
 	
 	public static void main(String[] args) {
-		Map<Integer, String> map = new TreeMap<>();
-		map.put(1, "ail");
 		
-		showMenu("ATAM UYGULAMASI", map);
-		showMenu("ERGUL BANKASI", map);
-		showMenu("ERGULA", map);
 	}
 	
 	public static String selectMenu(String msg) {
@@ -34,6 +23,21 @@ public class ConsoleHelper {
 		String s = secim.next().trim();
 		secim.close();
 		return s;
+	}
+	
+	public static String readString(String msg) {
+		Scanner in = new Scanner(System.in);
+		do {
+			try {
+				
+				System.out.print(msg);
+				String strLine = in.nextLine();
+				return strLine;
+			} catch (IllegalArgumentException e) {
+				System.out.println(e.getMessage());
+			}
+		} while (true);
+		
 	}
 	
 	public static int selectDigitSecim() {
